@@ -1,0 +1,19 @@
+.tree-view--container .tree-view--icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tree-view--container .tree-view--item .tree-view--folder-icon--closed {
+  display: none;
+}
+
+.tree-view--container .tree-view--item.is-collapsed .tree-view--folder-icon--open {
+  display: none;
+}
+
+.tree-view--container .tree-view--item.is-collapsed .tree-view--folder-icon--closed {
+  display: inline-flex;
+}

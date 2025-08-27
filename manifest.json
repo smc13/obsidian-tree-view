@@ -1,0 +1,10 @@
+{
+  "id": "tree-view",
+  "name": "Tree view",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Renders a tree view from a code block.",
+  "author": "smc13",
+  "authorUrl": "https://github.com/smc13",
+  "isDesktopOnly": false
+}

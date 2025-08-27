@@ -1,3 +1,8 @@
 dist
 node_modules
+
+# symlinked files for local development
 main.js
+manifest.json
+styles.css
+!assets/*

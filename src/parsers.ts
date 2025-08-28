@@ -5,6 +5,24 @@ export interface TreeNode {
   children: TreeNode[]
 }
 
+export function parseSource(source: string, type?: 'ascii' | 'json'): TreeNode[] {
+  // if we've been given a type, use that
+  if (type === 'ascii') {
+    return parseAsciiTree(source)
+  }
+  if (type === 'json') {
+    return parseJsonTree(source)
+  }
+
+  // otherwise, try to auto-detect
+  const trimmed = source.trim()
+  if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+    return parseJsonTree(source)
+  }
+
+  return parseAsciiTree(source)
+}
+
 /**
  * Parses an ASCII tree representation (eg from `tree` command) into a nested object structure.
  * example input:

@@ -1,5 +1,5 @@
 import { Plugin } from 'obsidian'
-import { parseAsciiTree, parseJsonTree } from './parsers'
+import { parseSource } from './parsers'
 import { renderTree } from './render'
 
 interface TreeViewPluginSettings {
@@ -19,7 +19,7 @@ export default class TreeViewPlugin extends Plugin {
 
     this.registerMarkdownCodeBlockProcessor('tree', (source, el, ctx) => {
       try {
-        const treeStructure = parseAsciiTree(source)
+        const treeStructure = parseSource(source)
 
         renderTree(this.app, ctx.sourcePath, el, treeStructure)
       } catch (e) {

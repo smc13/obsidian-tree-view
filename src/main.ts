@@ -56,7 +56,7 @@ export default class TreeViewPlugin extends Plugin {
       }
     )
 
-    const { icon } = this.createTreeItemSelf(item, node)
+    const { self, icon } = this.createTreeItemSelf(item, node)
 
     if (hasChildren) {
       const childrenContainer = item.createEl('div', { cls: 'tree-item-children nav-folder-children' })
@@ -73,7 +73,7 @@ export default class TreeViewPlugin extends Plugin {
         }
       }
 
-      item.addEventListener('click', (e) => {
+      self.addEventListener('click', (e) => {
         e.stopPropagation()
         toggleCollapse(!item.hasClass('is-collapsed'))
       })
